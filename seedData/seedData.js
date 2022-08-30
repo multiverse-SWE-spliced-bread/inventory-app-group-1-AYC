@@ -1,6 +1,8 @@
 module.exports = {
-  sauces: [
-    {"name" : "Sriracha", "image" : "https://64.media.tumblr.com/12cd128183713bf928bda87a24f22487/tumblr_ne6jee85PM1tha1vgo1_250.gif"},
+  consoles: [
+    {
+   "name" : "Playstation 5", 
+   "image" : "https://c.tenor.com/z5KgVPkaF-8AAAAC/ps5-playstation.gif"},
     {"name" : "Franks", "image": "https://cdn.streamelements.com/uploads/1887a0da-3642-4795-b5f5-774d5b377e52.gif"},
     {"name" : "Tobasco", "image": "https://64.media.tumblr.com/1564fcf74adc3fe6542c34b6a1f05de1/tumblr_na9lew0bNS1tha1vgo1_r1_250.gif"}
   ],
@@ -10,7 +12,7 @@ module.exports = {
        "price":109.95,
        "description":"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
        "category":"men's clothing",
-       "image":"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
+       "image":"https://fakestoreapi.com/img/81fPKd-2AYæL._AC_SL1500_.jpg"
     },
     {
        "title":"Mens Casual Premium Slim Fit T-Shirts ",
