@@ -7,7 +7,7 @@
 const { db, DataTypes } = require('../db')
 
 const Item = db.define('Item', {
-    name: {
+    title: {
         type: DataTypes.STRING,
     },
     description: {
