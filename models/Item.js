@@ -24,4 +24,4 @@ const Item = db.define('Item', {
     }
 })
 
-module.exports = Item
+module.exports = {Item}
