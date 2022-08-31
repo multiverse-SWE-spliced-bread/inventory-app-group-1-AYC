@@ -1,5 +1,5 @@
 const express = require('express')
-const {Item} = require('../models')
+const {Item,User} = require('../models')
 const {check,validationResult} = require("express-validator");
 const { items } = require('../seedData/seedData')
 // const {check, validationResult} = require('express-validator')
@@ -43,5 +43,12 @@ itemsRt.post('/',[
     let allItems = await Item.findAll();
     res.status(202).send(allItems);
 });
+
+itemsRt.put('/:item/:user', async (req, res) => {
+    const item = await Item.findByPk(req.params.item);
+    const user = await User.findByPk(req.params.user);
+    await item.addUser(user);
+    res.send(200);
+})
 
 module.exports = {itemsRt}

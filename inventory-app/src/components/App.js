@@ -22,7 +22,7 @@ export const App = () => {
   return (
     <main>	
       <h1>Inventory App</h1>
-			<ItemsList items={items} setItems={setItems} />
+			<ItemsList items={items} setItems={setItems} fetchAllItems={fetchAllItems} />
 		</main>
   );
 }
