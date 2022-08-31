@@ -1,6 +1,7 @@
 const express = require('express')
-const {Item} = require('../models')
-const {check, validationResult} = require('express-validator')
+const { identity } = require('lodash')
+const Item = require('../models/Item')
+// const {check, validationResult} = require('express-validator')
 const itemsRt = express.Router()
 
 itemsRt.get('/:id', async (req, res) => {
