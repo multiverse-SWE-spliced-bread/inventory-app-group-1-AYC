@@ -1,5 +1,5 @@
 const express = require('express')
-const Item = require('../models/Item')
+const {Item} = require('../models')
 const {check,validationResult} = require("express-validator");
 const { items } = require('../seedData/seedData')
 // const {check, validationResult} = require('express-validator')
