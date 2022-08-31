@@ -6,7 +6,7 @@ const PORT = 3000
 seed()
 
 app.use(express.json())
-app.use('./items', itemsRt)
+app.use('/items', itemsRt)
 // app.use('./sauces', saucesRT)
 
 app.listen(PORT, () => {
