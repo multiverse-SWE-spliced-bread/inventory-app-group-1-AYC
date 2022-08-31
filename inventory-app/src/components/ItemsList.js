@@ -1,6 +1,20 @@
 import React, {useState} from 'react';
 
-export const ItemsList = ({items,setItems}) => {
+export const ItemsList = ({items,setItems,fetchAllItems}) => {
+
+    async function addItem(id){
+		try {
+            const reqOptions = {
+                method: "PUT",
+                headers: {
+                   "Content-Type": 'application/json'
+                }
+            }
+			const res = await fetch(`http://localhost:3000/items/${id}/1`,reqOptions);
+		} catch (err) {
+			console.log("Oh no an error! ", err)
+		}
+	}
 
     async function singleItem(id){
 		try {
@@ -18,6 +32,8 @@ export const ItemsList = ({items,setItems}) => {
             <h3 onClick={() => singleItem(items[0].id)}>{items[0].title}</h3>
             <h3>{items[0].price}</h3>
             <p>{items[0].description}</p>
+            <button onClick={() => addItem(items[0].id)}>Add to basket</button>
+            <button onClick={() => fetchAllItems()}>Back</button>
         </>
     }
     else {
