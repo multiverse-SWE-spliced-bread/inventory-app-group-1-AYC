@@ -31,9 +31,10 @@ export const ItemsList = ({items,setItems,fetchAllItems}) => {
 
     if (items.length === 1) {
         return (<>
-            <h3 onClick={() => singleItem(items[0].id)}>{items[0].title}</h3>
-            <h3>{items[0].price}</h3>
-            <p>{items[0].description}</p>
+            <h3 className="single title">{items[0].title}</h3>
+            <div className="img-grid"><img src={items[0].image}/></div>
+            <h3 className="single price">£{items[0].price}</h3>
+            <p className="single description">{items[0].description}</p>
             <button onClick={() => addItem(items[0].id)}>Add to basket</button>
             <button onClick={() => fetchAllItems()}>Back</button>         
         </>)
@@ -43,8 +44,10 @@ export const ItemsList = ({items,setItems,fetchAllItems}) => {
         {
             items.map((item, idx) => {
                 return <>
-                    <h3 onClick={() => singleItem(item.id)}>{item.title}</h3>
-                    <h3>{item.price}</h3>
+                <div className="multi-item">
+                    <h3 onClick={() => singleItem(item.id)} className="multi title">{item.title}</h3>
+                    <h3 className="multi price">£{item.price}</h3>
+                </div>
                 </>
             })
         }
