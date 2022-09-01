@@ -7,7 +7,7 @@
 const { db, DataTypes } = require('../db')
 
 const Item = db.define('Item', {
-    name: {
+    title: {
         type: DataTypes.STRING,
     },
     description: {
@@ -24,4 +24,4 @@ const Item = db.define('Item', {
     }
 })
 
-module.exports = Item
+module.exports = {Item}
