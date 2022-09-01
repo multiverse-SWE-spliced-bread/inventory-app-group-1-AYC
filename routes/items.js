@@ -57,7 +57,7 @@ itemsRt.delete('/:item', async (req, res) => {
     res.send(200);
 });
 
-itemsRt.put('/:item',[
+itemsRt.put('/:id',[
     check("title").trim().optional().not().isEmpty().withMessage('title must have content'),
     check("price").optional().isNumeric().withMessage('price must be a number'),
     check("description").trim().optional().not().isEmpty().withMessage('description must have content'),
@@ -69,8 +69,10 @@ itemsRt.put('/:item',[
         console.log("Error: Invalid data submitted");
         return res.status(400).send({error: errors.array()});
     }
-    let findItem = await Show.findByPk(req.params.id);
+    let findItem = await Item.findByPk(req.params.id);
     let newItem = req.body;
+    console.log(findItem);
+    console.log(newItem);
     if (newItem.title) {
         await findItem.update({
             title: newItem.title
