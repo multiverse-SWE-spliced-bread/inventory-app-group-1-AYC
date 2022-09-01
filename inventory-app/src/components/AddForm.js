@@ -39,7 +39,7 @@ export const AddForm = ({fetchAllItems,setFormView}) => {
     }
 
     return ( <>
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="form">
         <h3>Add item:</h3>
         <label>
             Title:
