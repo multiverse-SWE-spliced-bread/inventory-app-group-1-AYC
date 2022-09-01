@@ -53,7 +53,11 @@ export const ItemsList = ({items,setItems,fetchAllItems}) => {
             <h3 className="single price">£{items[0].price}</h3>
             <p className="single description">{items[0].description}</p>
             <button onClick={() => addItem(items[0].id)}>Add to basket</button>
-            <button onClick={() => fetchAllItems()}>Back</button>         
+            <button onClick={() => fetchAllItems()}>Back</button>
+            <button onClick={() => deleteItem(items[0].id)}>Delete item</button>
+            {
+            (editFormView) ? <EditForm singleItem={singleItem} setEditFormView={setEditFormView} items={items} /> : <button onClick={() => setEditFormView(!editFormView)}>Edit item</button>
+            }      
         </>)
     }
     else {

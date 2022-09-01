@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-export const EditForm = ({fetchAllItems, setEditFormView, items, singleItem}) => {
+export const EditForm = ({setEditFormView, items, singleItem}) => {
     const [title,setTitle] = useState("");
     const [price,setPrice] = useState(0);
     const [description,setDescription] = useState("");
