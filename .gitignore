@@ -6,6 +6,7 @@
 **/*.back.*
 .cache
 node_modules/
+db/db.sqlite
 
 ##Production
 build
