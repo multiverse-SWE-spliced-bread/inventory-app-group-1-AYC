@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
+import {AddForm} from "./AddForm";
 
 export const ItemsList = ({items,setItems,fetchAllItems}) => {
+    const [formView,setFormView] = useState(false);
 
     async function addItem(id){
 		try {
@@ -28,16 +30,16 @@ export const ItemsList = ({items,setItems,fetchAllItems}) => {
 	}
 
     if (items.length === 1) {
-        return <>
+        return (<>
             <h3 onClick={() => singleItem(items[0].id)}>{items[0].title}</h3>
             <h3>{items[0].price}</h3>
             <p>{items[0].description}</p>
             <button onClick={() => addItem(items[0].id)}>Add to basket</button>
-            <button onClick={() => fetchAllItems()}>Back</button>
-        </>
+            <button onClick={() => fetchAllItems()}>Back</button>         
+        </>)
     }
     else {
-        return <>
+        return (<>
         {
             items.map((item, idx) => {
                 return <>
@@ -46,6 +48,9 @@ export const ItemsList = ({items,setItems,fetchAllItems}) => {
                 </>
             })
         }
-    </>
+        {
+            (formView) ? <AddForm fetchAllItems={fetchAllItems} setFormView={setFormView}/> : <button onClick={() => setFormView(!formView)}>Add item</button>
+        }
+    </>)
     }
 }
