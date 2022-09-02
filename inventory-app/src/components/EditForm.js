@@ -9,17 +9,30 @@ export const EditForm = ({setEditFormView, items, singleItem}) => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        const body = {}
+        if (title) {
+            body.title = title
+        }
+        if (price) {
+            body.price = price
+        }
+        if (description) {
+            body.description = description
+        }
+        if (category) {
+            body.category = category
+        }
+        if (image) {
+            body.image = image
+        }
+        console.log(body)
         const reqOptions = {
             method: "PUT",
             headers: {
                "Content-Type": 'application/json'
             },
             body : JSON.stringify({
-                title: title,
-                price: price,
-                description: description,
-                category: category,
-                image: image
+                body
             })
         }
         console.log(reqOptions)
