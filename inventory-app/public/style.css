@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    color: whitesmoke;
+    background-color: rgb(37, 37, 37);
+  }
+
+main {
+    padding: 1rem;
+}
+
+.multi-item {
+    margin: 2rem 0;
+}
+
+.multi {
+    font-size: 1.2rem;
+}
+
+.multi.title{
+    max-width: fit-content;
+}
+
+.multi.title:hover{
+    color: plum;
+}
+
+.price{
+    color: lime;
+}
+
+.single {
+    margin: 2rem 0;
+}
+
+.single.title{
+    font-size: 2rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    margin: 1rem 0;
+}
+  
+.form > * {
+    margin: 0.5rem 0;
+}
+
+input {
+    background-color: white;
+    color: black;
+    margin: 0 0.7rem;
+}
+
+.img-grid {
+    display: grid;
+    place-items: center;
+}
+
+img {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+button {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    background-color: rgb(173, 173, 173);
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: rgb(64, 64, 64);
+    color: white;
+}
