@@ -64,6 +64,7 @@ itemsRt.put('/:id',[
     check("category").trim().optional().not().isEmpty().withMessage('category must have content'),
     check("image").optional().isURL().withMessage('image must be a URL')
 ], async (req, res) => {
+    console.log("Put request!");
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         console.log("Error: Invalid data submitted");
@@ -71,34 +72,40 @@ itemsRt.put('/:id',[
     }
     let findItem = await Item.findByPk(req.params.id);
     let newItem = req.body;
-    console.log(findItem);
-    console.log(newItem);
+    console.log("FIND:",findItem);
+    console.log("NEW:",newItem);
     if (newItem.title) {
+        console.log("NEW TITLE");
         await findItem.update({
             title: newItem.title
         });
     }
     if (newItem.price) {
+        console.log("NEW PRICE");
         await findItem.update({
             price: newItem.price
         });
     }
     if (newItem.description) {
+        console.log("NEW DESC");
         await findItem.update({
             description: newItem.description
         });
     }
     if (newItem.category) {
+        console.log("NEW CATEGORY");
         await findItem.update({
             category: newItem.category
         });
     }
     if (newItem.image) {
+        console.log("NEW IMAGE");
         await findItem.update({
             image: newItem.image
         });
     }
-    console.log("Created new item: " + newItem.title);
+    findItem = await Item.findByPk(req.params.id);
+    console.log("Updated item: " + findItem.title);
     let allItems = await Item.findAll();
     res.status(202).send(allItems);
 });

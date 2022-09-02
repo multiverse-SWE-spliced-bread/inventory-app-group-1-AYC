@@ -31,9 +31,9 @@ export const EditForm = ({setEditFormView, items, singleItem}) => {
             headers: {
                "Content-Type": 'application/json'
             },
-            body : JSON.stringify({
+            body : JSON.stringify(
                 body
-            })
+            )
         }
         console.log(reqOptions)
         try {
